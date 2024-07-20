@@ -2,21 +2,33 @@
 {% extends "main/base.html" %}
 
 {% block content %}
-    <h1>About Me</h1>
-    <p>{{ about_me.bio }}</p>
-    <a href="{% url 'edit_about_me' %}">Edit</a>
+    <section id="about-me">
+        <h1>About Me</h1>
+        <p>{{ about_me.bio }}</p>
+        <a href="{% url 'edit_about_me' %}" class="edit-link">Edit</a>
+    </section>
 
-    <h2>Skills</h2>
-    <ul>
-        {% for skill in skills %}
-            <li>{{ skill.name }}: {{ skill.description }} <a href="{% url 'edit_skill' skill.id %}">Edit</a></li>
-        {% endfor %}
-    </ul>
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            {% for skill in skills %}
+                <li>
+                    <strong>{{ skill.name }}:</strong> {{ skill.description }}
+                    <a href="{% url 'edit_skill' skill.id %}" class="edit-link">Edit</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
 
-    <h2>Developments</h2>
-    <ul>
-        {% for development in developments %}
-            <li>{{ development.title }}: {{ development.description }} <a href="{% url 'edit_development' development.id %}">Edit</a></li>
-        {% endfor %}
-    </ul>
+    <section id="developments">
+        <h2>Developments</h2>
+        <ul>
+            {% for development in developments %}
+                <li>
+                    <strong>{{ development.title }}:</strong> {{ development.description }}
+                    <a href="{% url 'edit_development' development.id %}" class="edit-link">Edit</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
 {% endblock %}

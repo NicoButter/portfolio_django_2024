@@ -24,7 +24,8 @@ html, body {
 header {
     position: relative;
     width: 100%;
-    padding: 20px;
+    padding: 5px 10px;
+    margin: 0;
     box-sizing: border-box;
 }
 
@@ -36,11 +37,14 @@ header {
 
 .logo img {
     height: 50px; /* Ajusta el tamaño según tus necesidades */
+    margin: 0;
+    border-radius: 50%;   
 }
 
 .banner {
     text-align: center;
     flex: 1;
+    margin: 0;
 }
 
 .banner h1 {
@@ -49,9 +53,18 @@ header {
     color: #fff; /* Ajusta el color del texto según sea necesario */
 }
 
+.banner img {
+    display: block;
+    margin: 0 auto;
+    max-height: 180px; /* Ajusta la altura máxima de la imagen */
+    padding: 0; /* Asegúrate de que no haya padding extra */
+}
+
+
 .social-links {
     display: flex;
     gap: 10px;
+    margin: 0;;
 }
 
 .social-links a img {
