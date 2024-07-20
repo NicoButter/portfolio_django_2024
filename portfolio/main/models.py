@@ -10,7 +10,7 @@ class Skill(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()
 
-class Developments(models.Model):
+class Development(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     description = models.TextField()

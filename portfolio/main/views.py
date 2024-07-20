@@ -1,18 +1,34 @@
-# main/views.py
 from django.shortcuts import render, redirect
-from .models import AboutMe, Skill, Project
-from .forms import AboutMeForm, SkillForm, ProjectForm
+from .models import AboutMe, Skill, Development
+from .forms import AboutMeForm, SkillForm, DevelopmentForm
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate, login
+from django.shortcuts import render, redirect
+from django.contrib.auth.forms import AuthenticationForm
+
+def custom_login(request):
+    if request.method == 'POST':
+        form = AuthenticationForm(request, data=request.POST)
+        if form.is_valid():
+            user = form.get_user()
+            login(request, user)
+            return redirect('home')
+    else:
+        form = AuthenticationForm()
+
 
 def home(request):
-    about_me = AboutMe.objects.filter(user=request.user).first()
-    skills = Skill.objects.filter(user=request.user)
-    projects = Project.objects.filter(user=request.user)
-    return render(request, 'main/home.html', {
+    about_me = AboutMe.objects.filter(user=request.user).first() if request.user.is_authenticated else None
+    skills = Skill.objects.filter(user=request.user) if request.user.is_authenticated else []
+    developments = Development.objects.filter(user=request.user) if request.user.is_authenticated else []
+    
+    context = {
         'about_me': about_me,
         'skills': skills,
-        'projects': projects,
-    })
+        'developments': developments,
+    }
+    return render(request, 'main/home.html', context)
+
 
 @login_required
 def edit_about_me(request):
@@ -39,13 +55,13 @@ def edit_skill(request, skill_id):
     return render(request, 'main/edit_skill.html', {'form': form})
 
 @login_required
-def edit_project(request, project_id):
-    project = Project.objects.get(id=project_id, user=request.user)
+def edit_development(request, development_id):
+    development = Development.objects.get(id=development_id, user=request.user)
     if request.method == 'POST':
-        form = ProjectForm(request.POST, instance=project)
+        form = DevelopmentForm(request.POST, instance=development)
         if form.is_valid():
             form.save()
             return redirect('home')
     else:
-        form = ProjectForm(instance=project)
-    return render(request, 'main/edit_project.html', {'form': form})
+        form = DevelopmentForm(instance=development)
+    return render(request, 'main/edit_development.html', {'form': form})

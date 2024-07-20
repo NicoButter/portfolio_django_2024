@@ -1,0 +1,22 @@
+<!-- main/templates/main/home.html -->
+{% extends "main/base.html" %}
+
+{% block content %}
+    <h1>About Me</h1>
+    <p>{{ about_me.bio }}</p>
+    <a href="{% url 'edit_about_me' %}">Edit</a>
+
+    <h2>Skills</h2>
+    <ul>
+        {% for skill in skills %}
+            <li>{{ skill.name }}: {{ skill.description }} <a href="{% url 'edit_skill' skill.id %}">Edit</a></li>
+        {% endfor %}
+    </ul>
+
+    <h2>Developments</h2>
+    <ul>
+        {% for development in developments %}
+            <li>{{ development.title }}: {{ development.description }} <a href="{% url 'edit_development' development.id %}">Edit</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

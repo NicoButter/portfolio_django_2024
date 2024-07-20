@@ -1,0 +1,11 @@
+<!-- main/templates/main/edit_development.html -->
+{% extends "main/base.html" %}
+
+{% block content %}
+    <h1>Edit Development</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+{% endblock %}

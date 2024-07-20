@@ -1,0 +1,94 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Mi Portafolio{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'main/css/styles.css' %}">
+    {% block extra_head %}
+    <!-- Aquí puedes incluir CSS adicional o meta tags específicos de cada página -->
+    {% endblock %}
+</head>
+<body>
+    <video id="video-background" autoplay muted loop>
+        <source src="{% static 'main/img/video_back_full_animation.mp4' %}" type="video/mp4">
+        Tu navegador no soporta el elemento de video.
+    </video>
+
+    <div id="content">
+
+    <header>
+        <header>
+            <div class="header-container">
+                <div class="logo">
+                    <a href="{% url 'home' %}">
+                        <img src="{% static 'main/images/logo.png' %}" alt="Logo">
+                    </a>
+                </div>
+                <div class="banner">
+                    <h1>Mi Portafolio</h1>
+                </div>
+                <div class="social-links">
+                    <a href="https://facebook.com" target="_blank">
+                        <img src="{% static 'main/images/facebook-icon.png' %}" alt="Facebook">
+                    </a>
+                    <a href="https://twitter.com" target="_blank">
+                        <img src="{% static 'main/images/twitter-icon.png' %}" alt="Twitter">
+                    </a>
+                    <a href="https://instagram.com" target="_blank">
+                        <img src="{% static 'main/images/instagram-icon.png' %}" alt="Instagram">
+                    </a>
+                </div>
+            </div>
+        </header>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Inicio</a></li>
+                <li><a href="{% url 'edit_about_me' %}">Sobre Mí</a></li>
+                <li><a href="{% url 'edit_skill' skill_id=1 %}">Habilidades</a></li>
+                <li><a href="{% url 'edit_development' development_id=1 %}">Desarrollos</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'logout' %}">Cerrar Sesión</a></li>
+                {% else %}
+                    <li><a href="{% url 'login' %}">Iniciar Sesión</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+
+
+
+
+
+
+    <main>
+        {% block content %}
+        <!-- Contenido específico de cada página -->
+        {% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2024 Mi Portafolio. Todos los derechos reservados.</p>
+    </footer>
+    <script src="{% static 'js/scripts.js' %}"></script>
+    {% block extra_scripts %}
+    <!-- Aquí puedes incluir scripts adicionales específicos de cada página -->
+    {% endblock %}
+</div>
+</body>
+</html>

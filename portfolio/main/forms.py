@@ -1,6 +1,5 @@
-# main/forms.py
 from django import forms
-from .models import AboutMe, Skill, Project
+from .models import AboutMe, Skill, Development
 
 class AboutMeForm(forms.ModelForm):
     class Meta:
@@ -12,7 +11,8 @@ class SkillForm(forms.ModelForm):
         model = Skill
         fields = ['name', 'description']
 
-class ProjectForm(forms.ModelForm):
+class DevelopmentForm(forms.ModelForm):
     class Meta:
-        model = Project
+        model = Development
         fields = ['title', 'description', 'link']
+        
