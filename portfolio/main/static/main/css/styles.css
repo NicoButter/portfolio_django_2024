@@ -77,3 +77,80 @@ footer {
     padding: 10px;
     text-align: center;
 }
+
+/*************************/
+
+#about-me, #skills, #developments {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo ligeramente opaco */
+    border-radius: 8px; /* Bordes redondeados */
+}
+
+h1, h2 {
+    color: #333; /* Color de texto para encabezados */
+}
+
+ul {
+    list-style-type: none; /* Elimina los puntos de la lista */
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+.edit-link {
+    color: #007BFF; /* Color del enlace */
+    text-decoration: none; /* Elimina el subrayado */
+    margin-left: 10px;
+}
+
+.edit-link:hover {
+    text-decoration: underline; /* Subrayado al pasar el ratón */
+}
+
+/* ************************************************************************************************* */
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ajusta según tus necesidades */
+    background: url("{% static 'main/img/tablet_login.png' %}") no-repeat center center fixed;
+    background-size: cover;
+}
+
+.tablet-image {
+    position: relative;
+    width: 400px; /* Ajusta según el tamaño de la imagen de la tablet */
+    height: 600px; /* Ajusta según el tamaño de la imagen de la tablet */
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparente para contraste */
+    border-radius: 20px; /* Bordes redondeados para imitar el aspecto de una tablet */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+
+.login-form {
+    width: 80%;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.login-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #1a1a1a; /* Ajusta según el estilo deseado */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.login-form button:hover {
+    background-color: #333;
+}

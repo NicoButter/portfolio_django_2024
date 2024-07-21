@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from .models import AboutMe, Skill, Development
 from .forms import AboutMeForm, SkillForm, DevelopmentForm
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm
 
@@ -15,6 +15,13 @@ def custom_login(request):
             return redirect('home')
     else:
         form = AuthenticationForm()
+
+    return render(request, 'accounts/login.html', {'form': form})
+
+def custom_logout(request):
+    logout(request)
+    return redirect('home')
+
 
 
 def home(request):
