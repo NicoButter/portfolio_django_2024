@@ -23,11 +23,10 @@ def custom_logout(request):
     return redirect('home')
 
 
-
 def home(request):
-    about_me = AboutMe.objects.filter(user=request.user).first() if request.user.is_authenticated else None
-    skills = Skill.objects.filter(user=request.user) if request.user.is_authenticated else []
-    developments = Development.objects.filter(user=request.user) if request.user.is_authenticated else []
+    about_me = AboutMe.objects.first() 
+    skills = Skill.objects.all()
+    developments = Development.objects.all()
     
     context = {
         'about_me': about_me,
@@ -35,7 +34,6 @@ def home(request):
         'developments': developments,
     }
     return render(request, 'main/home.html', context)
-
 
 @login_required
 def edit_about_me(request):

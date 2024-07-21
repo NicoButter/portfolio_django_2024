@@ -8,7 +8,7 @@
     <title>{% block title %}Mi Portafolio{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'main/css/styles.css' %}">
     {% block extra_head %}
-    <!-- Aquí puedes incluir CSS adicional o meta tags específicos de cada página -->
+        <link rel="stylesheet" href="{% static 'main/css/styles.css' %}">
     {% endblock %}
 </head>
 <body>
@@ -59,49 +59,26 @@
     </header>
 
     <main>
-        {% block content %}
-        <div class="about-me">
-            <h2>Sobre Mí</h2>
-            <p>{{ about_me.description }}</p>
+        
+        <div>
             {% if user.is_authenticated %}
-                <a href="{% url 'edit_about_me' %}" class="edit-button">Editar</a>
+                <p>Usuario autenticado: {{ user.username }}</p>
+            {% else %}
+                <p>No autenticado.</p>
             {% endif %}
         </div>
 
-        <div class="skills">
-            <h2>Habilidades</h2>
-            <ul>
-                {% for skill in skills %}
-                    <li>{{ skill.name }}: {{ skill.level }}</li>
-                    {% if user.is_authenticated %}
-                        <a href="{% url 'edit_skill' skill_id=skill.id %}" class="edit-button">Editar</a>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-        </div>
+        {% block content %}
+        
+        
 
-        <div class="developments">
-            <h2>Desarrollos</h2>
-            <ul>
-                {% for development in developments %}
-                    <li>{{ development.name }}: {{ development.description }}</li>
-                    {% if user.is_authenticated %}
-                        <a href="{% url 'edit_development' development_id=development.id %}" class="edit-button">Editar</a>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-        </div>
         {% endblock %}
+
     </main>
 
     <footer>
         <p>&copy; 2024 Mi Portafolio. Todos los derechos reservados.</p>
     </footer>
-
-    <script src="{% static 'js/scripts.js' %}"></script>
-    {% block extra_scripts %}
-    <!-- Aquí puedes incluir scripts adicionales específicos de cada página -->
-    {% endblock %}
 
 </body>
 </html>

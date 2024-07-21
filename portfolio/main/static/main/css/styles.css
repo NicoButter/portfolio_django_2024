@@ -78,7 +78,7 @@ footer {
     text-align: center;
 }
 
-/*************************/
+/* *********************************************************************************************** */
 
 #about-me, #skills, #developments {
     margin: 20px 0;
@@ -98,16 +98,6 @@ ul {
 
 li {
     margin-bottom: 10px;
-}
-
-.edit-link {
-    color: #007BFF; /* Color del enlace */
-    text-decoration: none; /* Elimina el subrayado */
-    margin-left: 10px;
-}
-
-.edit-link:hover {
-    text-decoration: underline; /* Subrayado al pasar el ratón */
 }
 
 /* ************************************************************************************************* */
@@ -153,4 +143,16 @@ li {
 
 .login-form button:hover {
     background-color: #333;
+}
+
+/*  *******************************************************************************************  */
+
+.edit-button {
+    display: inline-block; /* Asegúrate de que el botón es visible */
+    margin: 5px;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
 }

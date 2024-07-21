@@ -2,33 +2,37 @@
 {% extends "main/base.html" %}
 
 {% block content %}
-    <section id="about-me">
-        <h1>About Me</h1>
-        <p>{{ about_me.bio }}</p>
-        <a href="{% url 'edit_about_me' %}" class="edit-link">Edit</a>
-    </section>
 
-    <section id="skills">
-        <h2>Skills</h2>
-        <ul>
-            {% for skill in skills %}
-                <li>
-                    <strong>{{ skill.name }}:</strong> {{ skill.description }}
-                    <a href="{% url 'edit_skill' skill.id %}" class="edit-link">Edit</a>
-                </li>
-            {% endfor %}
-        </ul>
-    </section>
+<div class="about-me">
+    <h2>Sobre Mí</h2>
+    <p>{{ about_me.description }}</p>
+    {% if user.is_authenticated %}   
+        <a href="{% url 'edit_about_me' %}" class="edit-button">Editar</a>
+    {% endif %}
+</div>
 
-    <section id="developments">
-        <h2>Developments</h2>
-        <ul>
-            {% for development in developments %}
-                <li>
-                    <strong>{{ development.title }}:</strong> {{ development.description }}
-                    <a href="{% url 'edit_development' development.id %}" class="edit-link">Edit</a>
-                </li>
-            {% endfor %}
-        </ul>
-    </section>
+<div class="skills">
+    <h2>Habilidades</h2>
+    <ul>
+        {% for skill in skills %}
+            <li>{{ skill.name }}: {{ skill.level }}</li>
+            {% if user.is_authenticated %}
+                <a href="{% url 'edit_skill' skill_id=skill.id %}" class="edit-button">Editar</a>
+            {% endif %}
+        {% endfor %}    
+    </ul>
+</div>
+
+<div class="developments">
+    <h2>Desarrollos</h2>
+    <ul>
+        {% for development in developments %}
+            <li>{{ development.name }}: {{ development.description }}</li>
+            {% if user.is_authenticated %}
+                <a href="{% url 'edit_development' development_id=development.id %}" class="edit-button">Editar</a>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</div>
+
 {% endblock %}
