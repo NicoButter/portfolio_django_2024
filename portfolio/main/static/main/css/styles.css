@@ -116,6 +116,66 @@ nav ul li a:hover {
 
 /********************************************************************************************************************/
 
+main {
+    padding: 20px; /* Agrega algo de espacio alrededor del contenido principal */
+}
+
+/********************************************************************************************************************/
+
+.about-me {
+    width: 35%; /* Ajusta el ancho del contenedor */
+    margin-right: auto; /* Alinea el contenedor a la izquierda */
+    margin-bottom: 20px; /* Espacio debajo del contenedor */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    float: left; /* Alinea el contenedor a la izquierda */
+}
+
+.about-me h2 {
+    font-size: 1.5em; /* Tamaño del título */
+    margin-bottom: 10px; /* Espacio debajo del título */
+}
+
+.about-me p {
+    font-size: 1em; /* Tamaño del texto */
+    line-height: 1.6; /* Altura de línea para mejor legibilidad */
+}
+
+.skills, .developments {
+    width: 100%; 
+    max-width: 600px; 
+    margin-bottom: 20px; 
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    clear: both; 
+}
+
+/* Estilos para botones */
+.add-button, .edit-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #007bff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.add-button:hover, .edit-button:hover {
+    background-color: #0056b3;
+}
+
+/********************************************************************************************************************/
+
 footer {
     background-color: rgba(0, 0, 0, 0.5);
     padding: 10px;

@@ -84,9 +84,6 @@ def add_skill(request):
         form = SkillForm()
     return render(request, 'main/add_skill.html', {'form': form})
 
-from django.shortcuts import render, redirect
-from .forms import DevelopmentForm
-
 @login_required
 def add_development(request):
     if request.method == 'POST':
