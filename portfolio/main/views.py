@@ -3,7 +3,6 @@ from .models import AboutMe, Skill, Development
 from .forms import AboutMeForm, SkillForm, DevelopmentForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
-from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm
 
 def custom_login(request):
@@ -22,9 +21,8 @@ def custom_logout(request):
     logout(request)
     return redirect('home')
 
-
 def home(request):
-    about_me = AboutMe.objects.first() 
+    about_me = AboutMe.objects.first()
     skills = Skill.objects.all()
     developments = Development.objects.all()
     
@@ -37,11 +35,13 @@ def home(request):
 
 @login_required
 def edit_about_me(request):
-    about_me = AboutMe.objects.filter(user=request.user).first()
+    about_me, created = AboutMe.objects.get_or_create(user=request.user)
     if request.method == 'POST':
         form = AboutMeForm(request.POST, instance=about_me)
         if form.is_valid():
-            form.save()
+            about_me = form.save(commit=False)
+            about_me.user = request.user
+            about_me.save()
             return redirect('home')
     else:
         form = AboutMeForm(instance=about_me)

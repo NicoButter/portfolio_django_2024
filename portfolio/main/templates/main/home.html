@@ -5,7 +5,7 @@
 
 <div class="about-me">
     <h2>Sobre Mí</h2>
-    <p>{{ about_me.description }}</p>
+    <p>{{ about_me.bio }}</p>
     {% if user.is_authenticated %}   
         <a href="{% url 'edit_about_me' %}" class="edit-button">Editar</a>
     {% endif %}

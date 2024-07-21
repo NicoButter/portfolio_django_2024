@@ -3,6 +3,9 @@ html, body {
     padding: 0;
     overflow-x: hidden;
     height: 100%;
+    font-family: "Major Mono Display", monospace;
+    font-weight: 400;
+    font-style: normal;
 }
 
 #video-background {
@@ -36,7 +39,7 @@ header {
 }
 
 .logo img {
-    height: 50px; /* Ajusta el tamaño según tus necesidades */
+    height: 50px; 
     margin: 0;
     border-radius: 50%;   
 }
@@ -50,14 +53,14 @@ header {
 .banner h1 {
     margin: 0;
     font-size: 2em;
-    color: #fff; /* Ajusta el color del texto según sea necesario */
+    color: #fff; 
 }
 
 .banner img {
     display: block;
     margin: 0 auto;
-    max-height: 180px; /* Ajusta la altura máxima de la imagen */
-    padding: 0; /* Asegúrate de que no haya padding extra */
+    max-height: 180px; 
+    padding: 0; 
 }
 
 
@@ -67,10 +70,56 @@ header {
     margin: 0;;
 }
 
-.social-links a img {
-    height: 30px; /* Ajusta el tamaño de los iconos de redes sociales */
-    vertical-align: middle;
+.social-icon {
+    display: inline-block; 
+    font-size: 24px; 
+    transition: color 0.3s, transform 0.3s; 
 }
+
+.social-icon:hover {
+    color: #007bff; 
+    transform: scale(1.1); 
+}
+
+nav {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+
+/********************************************************************************************************************/
+
+
+
+
+
 
 footer {
     background-color: rgba(0, 0, 0, 0.5);
@@ -106,17 +155,17 @@ li {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Ajusta según tus necesidades */
+    height: 100vh; 
     background: url("{% static 'main/img/tablet_login.png' %}") no-repeat center center fixed;
     background-size: cover;
 }
 
 .tablet-image {
     position: relative;
-    width: 400px; /* Ajusta según el tamaño de la imagen de la tablet */
-    height: 600px; /* Ajusta según el tamaño de la imagen de la tablet */
-    background: rgba(0, 0, 0, 0.6); /* Semi-transparente para contraste */
-    border-radius: 20px; /* Bordes redondeados para imitar el aspecto de una tablet */
+    width: 400px; 
+    height: 600px; 
+    background: rgba(0, 0, 0, 0.6); 
+    border-radius: 20px; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -133,7 +182,7 @@ li {
 .login-form button {
     width: 100%;
     padding: 10px;
-    background-color: #1a1a1a; /* Ajusta según el estilo deseado */
+    background-color: #1a1a1a; 
     color: white;
     border: none;
     border-radius: 5px;
@@ -148,7 +197,7 @@ li {
 /*  *******************************************************************************************  */
 
 .edit-button {
-    display: inline-block; /* Asegúrate de que el botón es visible */
+    display: inline-block;
     margin: 5px;
     padding: 10px;
     background-color: #007BFF;

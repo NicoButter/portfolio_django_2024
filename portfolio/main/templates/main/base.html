@@ -6,6 +6,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Mi Portafolio{% endblock %}</title>
+
+    <script src="https://kit.fontawesome.com/16c678032e.js" crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
+
+
+
+
     <link rel="stylesheet" href="{% static 'main/css/styles.css' %}">
     {% block extra_head %}
         <link rel="stylesheet" href="{% static 'main/css/styles.css' %}">
@@ -28,15 +38,9 @@
                 <img src="{% static 'main/img/nombre_banner.png' %}" alt="Facebook">
             </div>
             <div class="social-links">
-                <a href="https://facebook.com" target="_blank">
-                    <img src="{% static 'main/images/facebook-icon.png' %}" alt="Facebook">
-                </a>
-                <a href="https://twitter.com" target="_blank">
-                    <img src="{% static 'main/images/twitter-icon.png' %}" alt="Twitter">
-                </a>
-                <a href="https://instagram.com" target="_blank">
-                    <img src="{% static 'main/images/instagram-icon.png' %}" alt="Instagram">
-                </a>
+                <a href="https://facebook.com" target="_blank" class="social-icon"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://soundcloud.com/user-785671138/perda" target="_blank" class="social-icon"><i class="fa-brands fa-soundcloud"></i></a>
+                <a href="www.linkedin.com/in/nicolás-butterfield-9964aa1a3" target="_blank" class="social-icon"><i class="fa-brands fa-linkedin"></i></a>
             </div>
         </div>
 
@@ -47,12 +51,12 @@
                 <li><a href="{% url 'edit_skill' skill_id=1 %}">Habilidades</a></li>
                 <li><a href="{% url 'edit_development' development_id=1 %}">Desarrollos</a></li>
                 {% if user.is_authenticated %}
-                    <li><a href="#" onclick="document.getElementById('logout-form').submit();">Cerrar Sesión</a></li>
+                    <li><a href="#" onclick="document.getElementById('logout-form').submit();">Logout</a></li>
                     <form id="logout-form" action="{% url 'logout' %}" method="post" style="display: none;">
                         {% csrf_token %}
                     </form>
                 {% else %}
-                    <li><a href="{% url 'login' %}">Iniciar Sesión</a></li>
+                    <li><a href="{% url 'login' %}">Login</a></li>
                 {% endif %}
             </ul>
         </nav>
