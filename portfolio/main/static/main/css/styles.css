@@ -117,32 +117,32 @@ nav ul li a:hover {
 /********************************************************************************************************************/
 
 main {
-    padding: 20px; /* Agrega algo de espacio alrededor del contenido principal */
+    padding: 20px; 
 }
 
 /********************************************************************************************************************/
 
 .about-me {
-    width: 35%; /* Ajusta el ancho del contenedor */
-    margin-right: auto; /* Alinea el contenedor a la izquierda */
-    margin-bottom: 20px; /* Espacio debajo del contenedor */
+    width: 35%; 
+    margin-right: auto; 
+    margin-bottom: 20px; 
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 8px;
     background-color: #f9f9f9;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: left;
-    float: left; /* Alinea el contenedor a la izquierda */
+    float: left; 
 }
 
 .about-me h2 {
-    font-size: 1.5em; /* Tamaño del título */
-    margin-bottom: 10px; /* Espacio debajo del título */
+    font-size: 1.5em; 
+    margin-bottom: 10px; 
 }
 
 .about-me p {
-    font-size: 1em; /* Tamaño del texto */
-    line-height: 1.6; /* Altura de línea para mejor legibilidad */
+    font-size: 1em; 
+    line-height: 1.6; 
 }
 
 .skills, .developments {
@@ -158,7 +158,6 @@ main {
     clear: both; 
 }
 
-/* Estilos para botones */
 .add-button, .edit-button {
     display: inline-block;
     margin-top: 10px;
@@ -187,16 +186,16 @@ footer {
 #about-me, #skills, #developments {
     margin: 20px 0;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.8); /* Fondo ligeramente opaco */
-    border-radius: 8px; /* Bordes redondeados */
+    background-color: rgba(255, 255, 255, 0.8); 
+    border-radius: 8px; 
 }
 
 h1, h2 {
-    color: #333; /* Color de texto para encabezados */
+    color: #333; 
 }
 
 ul {
-    list-style-type: none; /* Elimina los puntos de la lista */
+    list-style-type: none; 
     padding: 0;
 }
 
