@@ -11,28 +11,35 @@
     {% endif %}
 </div>
 
-<div class="skills">
-    <h2>Habilidades</h2>
-    <ul>
-        {% for skill in skills %}
-            <li>{{ skill.name }}: {{ skill.level }}</li>
+<h2>Skills</h2>
+    {% if user.is_authenticated %}
+        <a href="{% url 'add_skill' %}">Agregar Skill</a>
+    {% endif %}
+    {% for skill in skills %}
+        <div>
+            <h3>{{ skill.title }}</h3>
+            <p>{{ skill.description }}</p>
             {% if user.is_authenticated %}
-                <a href="{% url 'edit_skill' skill_id=skill.id %}" class="edit-button">Editar</a>
+                <a href="{% url 'edit_skill' skill_id=skill.id %}">Editar</a>
             {% endif %}
-        {% endfor %}    
-    </ul>
-</div>
+        </div>
+    {% endfor %}
 
-<div class="developments">
-    <h2>Desarrollos</h2>
-    <ul>
-        {% for development in developments %}
-            <li>{{ development.name }}: {{ development.description }}</li>
-            {% if user.is_authenticated %}
-                <a href="{% url 'edit_development' development_id=development.id %}" class="edit-button">Editar</a>
+    <h2>Developments</h2>
+    {% if user.is_authenticated %}
+        <a href="{% url 'add_development' %}">Agregar Development</a>
+    {% endif %}
+    {% for development in developments %}
+        <div>
+            <h3>{{ development.title }}</h3>
+            <p>{{ development.description }}</p>
+            {% if development.image %}
+                <img src="{{ development.image.url }}" alt="{{ development.title }}" style="max-width: 200px;">
             {% endif %}
-        {% endfor %}
-    </ul>
-</div>
+            {% if user.is_authenticated %}
+                <a href="{% url 'edit_development' development_id=development.id %}">Editar</a>
+            {% endif %}
+        </div>
+    {% endfor %}
 
 {% endblock %}

@@ -14,5 +14,5 @@ class SkillForm(forms.ModelForm):
 class DevelopmentForm(forms.ModelForm):
     class Meta:
         model = Development
-        fields = ['title', 'description', 'link']
+        fields = ['title', 'description', 'image']
         

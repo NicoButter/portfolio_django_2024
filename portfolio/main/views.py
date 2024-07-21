@@ -70,3 +70,32 @@ def edit_development(request, development_id):
     else:
         form = DevelopmentForm(instance=development)
     return render(request, 'main/edit_development.html', {'form': form})
+
+@login_required
+def add_skill(request):
+    if request.method == 'POST':
+        form = SkillForm(request.POST)
+        if form.is_valid():
+            skill = form.save(commit=False)
+            skill.user = request.user
+            skill.save()
+            return redirect('home')
+    else:
+        form = SkillForm()
+    return render(request, 'main/add_skill.html', {'form': form})
+
+from django.shortcuts import render, redirect
+from .forms import DevelopmentForm
+
+@login_required
+def add_development(request):
+    if request.method == 'POST':
+        form = DevelopmentForm(request.POST, request.FILES)
+        if form.is_valid():
+            development = form.save(commit=False)
+            development.user = request.user
+            development.save()
+            return redirect('home')
+    else:
+        form = DevelopmentForm()
+    return render(request, 'main/add_development.html', {'form': form})

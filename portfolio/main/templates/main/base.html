@@ -5,16 +5,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Mi Portafolio{% endblock %}</title>
+    <title>{% block title %}Butterfield{% endblock %}</title>
 
     <script src="https://kit.fontawesome.com/16c678032e.js" crossorigin="anonymous"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
-
-
-
 
     <link rel="stylesheet" href="{% static 'main/css/styles.css' %}">
     {% block extra_head %}
@@ -63,25 +60,13 @@
     </header>
 
     <main>
-        
-        <div>
-            {% if user.is_authenticated %}
-                <p>Usuario autenticado: {{ user.username }}</p>
-            {% else %}
-                <p>No autenticado.</p>
-            {% endif %}
-        </div>
-
         {% block content %}
         
-        
-
         {% endblock %}
-
     </main>
 
     <footer>
-        <p>&copy; 2024 Mi Portafolio. Todos los derechos reservados.</p>
+        <p>&copy; 2024 Nicolas Butterfield. Todos los derechos reservados.</p>
     </footer>
 
 </body>
