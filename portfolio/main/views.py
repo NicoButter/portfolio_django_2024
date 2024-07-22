@@ -51,7 +51,7 @@ def edit_about_me(request):
 def edit_skill(request, skill_id):
     skill = Skill.objects.get(id=skill_id, user=request.user)
     if request.method == 'POST':
-        form = SkillForm(request.POST, instance=skill)
+        form = SkillForm(request.POST, request.FILES, instance=skill)
         if form.is_valid():
             form.save()
             return redirect('home')
@@ -74,12 +74,12 @@ def edit_development(request, development_id):
 @login_required
 def add_skill(request):
     if request.method == 'POST':
-        form = SkillForm(request.POST)
+        form = SkillForm(request.POST, request.FILES)
         if form.is_valid():
             skill = form.save(commit=False)
             skill.user = request.user
             skill.save()
-            return redirect('home')
+            return redirect('home')  
     else:
         form = SkillForm()
     return render(request, 'main/add_skill.html', {'form': form})

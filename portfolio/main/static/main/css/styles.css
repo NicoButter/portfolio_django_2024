@@ -39,9 +39,14 @@ header {
 }
 
 .logo img {
-    height: 50px; 
+    height: 100px; 
     margin: 0;
     border-radius: 50%;   
+}
+
+.logo img:hover { 
+    transform: scale(1.1); 
+    transition: transform 0.3s;
 }
 
 .banner {
@@ -127,13 +132,14 @@ main {
     margin-right: auto; 
     margin-bottom: 20px; 
     padding: 20px;
-    border: 1px solid #ddd;
     border-radius: 8px;
-    background-color: #f9f9f9;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: rgba(249, 249, 249, 0.01); /* Fondo con transparencia */
+    backdrop-filter: blur(25px); /* Aplicar efecto difuminado */
+    -webkit-backdrop-filter: blur(25px); /* Soporte para navegadores WebKit */
     text-align: left;
     float: left; 
 }
+
 
 .about-me h2 {
     font-size: 1.5em; 
@@ -171,6 +177,70 @@ main {
 
 .add-button:hover, .edit-button:hover {
     background-color: #0056b3;
+}
+
+/********************************************************************************************************************/
+
+.skill-item {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.skill-container {
+    position: relative;
+    display: inline-block;
+    width: 120px; /* Ajusta el tamaño del contenedor */
+    height: 120px; /* Ajusta el tamaño del contenedor */
+    margin-bottom: 10px;
+}
+
+.progress-circle {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: #f3f3f3; 
+}
+
+.progress-circle .skill-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80px; 
+    height: 80px; 
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.progress-circle .progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(
+        #4caf50 var(--progress), /* Color del progreso */
+        #f3f3f3 var(--progress) 100%
+    );
+    clip: rect(0, 120px, 120px, 60px);
+    transform: rotate(-90deg);
+    z-index: 1;
+}
+
+.add-button, .edit-button {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+    color: #fff;
+    background-color: #007bff; /* Ajusta el color según sea necesario */
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.add-button:hover, .edit-button:hover {
+    background-color: #0056b3; /* Color de fondo al pasar el ratón */
 }
 
 /********************************************************************************************************************/

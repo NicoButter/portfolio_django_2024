@@ -16,14 +16,20 @@
         <a href="{% url 'add_skill' %}" class="add-button">Agregar Skill</a>
     {% endif %}
     {% for skill in skills %}
-        <div class="skill-item">
-            <h3>{{ skill.title }}</h3>
-            <p>{{ skill.description }}</p>
-            {% if user.is_authenticated %}
-                <a href="{% url 'edit_skill' skill_id=skill.id %}" class="edit-button">Editar</a>
-            {% endif %}
+    <div class="skill-item">
+        <div class="skill-container">
+            <div class="progress-circle" data-progress="{{ skill.progress }}">
+                <img src="{{ skill.image.url }}" alt="{{ skill.name }}" class="skill-logo">
+                <div class="progress-bar" style="background: conic-gradient(#4caf50 {{ skill.progress }}%, #ddd 0%);"></div>
+            </div>
         </div>
-    {% endfor %}
+        <h3>{{ skill.name }}</h3>
+        <p>{{ skill.description }}</p>
+        {% if user.is_authenticated %}
+            <a href="{% url 'edit_skill' skill_id=skill.id %}" class="edit-button">Editar</a>
+        {% endif %}
+    </div>
+{% endfor %}
 </div>
 
 <div class="developments">

@@ -9,6 +9,11 @@ class Skill(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
     description = models.TextField()
+    image = models.ImageField(upload_to='skills/', blank=True, null=True)
+    progress = models.PositiveIntegerField(default=0)
+
+    def __str__(self):
+        return self.name
 
 class Development(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
