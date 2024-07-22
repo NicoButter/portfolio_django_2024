@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
@@ -39,13 +40,13 @@ header {
 }
 
 .logo img {
-    height: 100px; 
+    height: 100px;
     margin: 0;
-    border-radius: 50%;   
+    border-radius: 50%;
 }
 
-.logo img:hover { 
-    transform: scale(1.1); 
+.logo img:hover {
+    transform: scale(1.1);
     transition: transform 0.3s;
 }
 
@@ -58,14 +59,14 @@ header {
 .banner h1 {
     margin: 0;
     font-size: 2em;
-    color: #fff; 
+    color: #fff;
 }
 
 .banner img {
     display: block;
     margin: 0 auto;
-    max-height: 180px; 
-    padding: 0; 
+    max-height: 180px;
+    padding: 0;
 }
 
 .social-links {
@@ -77,14 +78,14 @@ header {
 
 .social-icon {
     display: inline-block;
-    color: #007bf8; 
-    font-size: 24px; 
-    transition: color 0.3s, transform 0.3s; 
+    color: #007bf8;
+    font-size: 24px;
+    transition: color 0.3s, transform 0.3s;
 }
 
 .social-icon:hover {
-    color: #007bff; 
-    transform: scale(1.1); 
+    color: #007bff;
+    transform: scale(1.1);
 }
 
 nav {
@@ -122,49 +123,50 @@ nav ul li a:hover {
 /********************************************************************************************************************/
 
 main {
-    padding: 20px; 
+    padding: 20px;
 }
 
 /********************************************************************************************************************/
 
 .about-me {
-    width: 35%; 
-    margin-right: auto; 
-    margin-bottom: 20px; 
+    width: 35%;
+    margin-right: auto;
+    margin-bottom: 20px;
     padding: 20px;
     border-radius: 8px;
-    background-color: rgba(249, 249, 249, 0.01); /* Fondo con transparencia */
-    backdrop-filter: blur(25px); /* Aplicar efecto difuminado */
-    -webkit-backdrop-filter: blur(25px); /* Soporte para navegadores WebKit */
-    text-align: left;
-    float: left; 
+    background-color: rgba(249, 249, 249, 0.01);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    float: left;
 }
 
 
 .about-me h2 {
-    font-size: 1.5em; 
-    margin-bottom: 10px; 
+    font-size: 1.5em;
+    margin-bottom: 10px;
 }
 
 .about-me p {
-    font-size: 1em; 
-    line-height: 1.6; 
+    font-size: 1em;
+    line-height: 1.6;
 }
 
-.skills, .developments {
-    width: 100%; 
-    max-width: 600px; 
-    margin-bottom: 20px; 
+.skills,
+.developments {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 8px;
     background-color: #f9f9f9;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: left;
-    clear: both; 
+    clear: both;
 }
 
-.add-button, .edit-button {
+.add-button,
+.edit-button {
     display: inline-block;
     margin-top: 10px;
     padding: 10px 20px;
@@ -175,7 +177,8 @@ main {
     font-weight: bold;
 }
 
-.add-button:hover, .edit-button:hover {
+.add-button:hover,
+.edit-button:hover {
     background-color: #0056b3;
 }
 
@@ -189,8 +192,8 @@ main {
 .skill-container {
     position: relative;
     display: inline-block;
-    width: 120px; /* Ajusta el tamaño del contenedor */
-    height: 120px; /* Ajusta el tamaño del contenedor */
+    width: 120px;
+    height: 120px;
     margin-bottom: 10px;
 }
 
@@ -199,15 +202,15 @@ main {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background: #f3f3f3; 
+    background: #f3f3f3;
 }
 
 .progress-circle .skill-logo {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 80px; 
-    height: 80px; 
+    width: 80px;
+    height: 80px;
     transform: translate(-50%, -50%);
     border-radius: 50%;
     z-index: 2;
@@ -220,27 +223,26 @@ main {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background: conic-gradient(
-        #4caf50 var(--progress), /* Color del progreso */
-        #f3f3f3 var(--progress) 100%
-    );
+    background: conic-gradient(#4caf50 var(--progress), #f3f3f3 var(--progress) 100%);
     clip: rect(0, 120px, 120px, 60px);
     transform: rotate(-90deg);
     z-index: 1;
 }
 
-.add-button, .edit-button {
+.add-button,
+.edit-button {
     display: inline-block;
     margin: 10px;
     padding: 10px;
     color: #fff;
-    background-color: #007bff; /* Ajusta el color según sea necesario */
+    background-color: #007bff;
     border-radius: 5px;
     text-decoration: none;
 }
 
-.add-button:hover, .edit-button:hover {
-    background-color: #0056b3; /* Color de fondo al pasar el ratón */
+.add-button:hover,
+.edit-button:hover {
+    background-color: #0056b3;
 }
 
 /********************************************************************************************************************/
@@ -253,19 +255,20 @@ footer {
 
 /* *********************************************************************************************** */
 
-#about-me, #skills, #developments {
+/* #about-me, #skills, #developments {
     margin: 20px 0;
     padding: 20px;
     background-color: rgba(255, 255, 255, 0.8); 
     border-radius: 8px; 
-}
+} */
 
-h1, h2 {
-    color: #333; 
+h1,
+h2 {
+    color: #333;
 }
 
 ul {
-    list-style-type: none; 
+    list-style-type: none;
     padding: 0;
 }
 
@@ -275,12 +278,12 @@ li {
 
 /* ************************************************************************************************* */
 
-.login-container {
+/* .login-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh; 
-    background: url("{% static 'main/img/tablet_login.png' %}") no-repeat center center fixed;
+    background: url("{% static '/main/img/tablet_login.png' %}") no-repeat center center fixed;
     background-size: cover;
 }
 
@@ -316,7 +319,7 @@ li {
 
 .login-form button:hover {
     background-color: #333;
-}
+} */
 
 /*  *******************************************************************************************  */
 
@@ -328,4 +331,59 @@ li {
     color: white;
     text-decoration: none;
     border-radius: 5px;
+}
+
+/***************************************************************************************************/
+
+.login-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    margin-top: 0;
+}
+
+.tablet-image {
+    position: relative;
+    width: 500px;
+    height: 700px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-top: 0;
+}
+
+.tablet-image-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.login-form {
+    position: relative;
+    width: 80%;
+    /* padding: 20px; */
+    /* background: white; */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.login-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #1a1a1a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.login-form button:hover {
+    background-color: #333;
 }

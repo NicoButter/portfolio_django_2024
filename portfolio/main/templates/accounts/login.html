@@ -1,8 +1,12 @@
 {% extends 'main/base.html' %}
 
+{% load static %}
+
+
 {% block content %}
     <div class="login-container">
         <div class="tablet-image">
+            <img src="{% static 'main/img/tablet_login.png' %}" alt="Tablet Image" class="tablet-image-bg">
             <form method="post" class="login-form">
                 {% csrf_token %}
                 {{ form.as_p }}
