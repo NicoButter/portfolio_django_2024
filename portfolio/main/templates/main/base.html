@@ -3,20 +3,24 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>{% block title %}Butterfield{% endblock %}</title>
 
     <script src="https://kit.fontawesome.com/16c678032e.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-circle-progress/dist/circle-progress.min.js" type="module"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="{% static 'main/css/styles.css' %}">
+    
     {% block extra_head %}
         <link rel="stylesheet" href="{% static 'main/css/styles.css' %}">
     {% endblock %}
+
 </head>
 <body>
 
@@ -25,7 +29,7 @@
     </video>
 
     <header>
-        <div class="header-container">
+        <div class="header-container" id="inicio">
             <div class="logo">
                 <a href="{% url 'home' %}">
                     <img src="{% static 'main/img/logo_redondo-nb_1.jpeg' %}" alt="Logo">
@@ -43,10 +47,10 @@
 
         <nav>
             <ul>
-                <li><a href="{% url 'home' %}">Inicio</a></li>
-                <li><a href="{% url 'edit_about_me' %}">Sobre Mí</a></li>
-                <li><a href="{% url 'edit_skill' skill_id=1 %}">Habilidades</a></li>
-                <li><a href="{% url 'edit_development' development_id=1 %}">Desarrollos</a></li>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#sobre-mi">Sobre Mí</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#desarrollos">Desarrollos</a></li>
                 {% if user.is_authenticated %}
                     <li><a href="#" onclick="document.getElementById('logout-form').submit();">Logout</a></li>
                     <form id="logout-form" action="{% url 'logout' %}" method="post" style="display: none;">
@@ -69,5 +73,9 @@
         <p>&copy; 2024 Nicolas Butterfield. Todos los derechos reservados.</p>
     </footer>
 
+    {% comment %} <script src="{% static 'main/js/progress.js' %}"></script> {% endcomment %}
+
 </body>
+
 </html>
+

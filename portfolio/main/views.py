@@ -50,7 +50,12 @@ def edit_about_me(request):
 @login_required
 def edit_skill(request, skill_id):
     skill = Skill.objects.get(id=skill_id, user=request.user)
+    
     if request.method == 'POST':
+        if request.POST.get('action') == 'delete':
+            skill.delete()
+            return redirect('home')
+        
         form = SkillForm(request.POST, request.FILES, instance=skill)
         if form.is_valid():
             form.save()

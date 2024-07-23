@@ -90,7 +90,7 @@ header {
 
 nav {
     position: relative;
-    background-color: rgba(0, 0, 0, 0.5);
+    /* background-color: rgba(0, 0, 0, 0.5); */
     padding: 10px 0;
 }
 
@@ -151,82 +151,140 @@ main {
     line-height: 1.6;
 }
 
-.skills,
 .developments {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espaciado entre los elementos */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    background-color: rgba(249, 249, 249, 0.01);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
     width: 100%;
-    max-width: 600px;
+    max-width: 400px;
     margin-bottom: 20px;
     padding: 20px;
-    border: 1px solid #ddd;
     border-radius: 8px;
-    background-color: #f9f9f9;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: left;
     clear: both;
 }
 
-.add-button,
-.edit-button {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 20px;
-    color: #fff;
-    background-color: #007bff;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.add-button:hover,
-.edit-button:hover {
-    background-color: #0056b3;
-}
-
 /********************************************************************************************************************/
 
+circle-progress {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+circle-progress::part(circle) {
+    stroke: #ddd;
+    stroke-width: 2px;
+}
+
+circle-progress::part(value) {
+    stroke: rgb(224, 125, 11);
+    stroke-width: 2px;
+}
+
+circle-progress::part(text) {
+    font-family: "Georgia";
+    font-size: 13px;
+}
+
+circle-progress {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    position: absolute;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    top: 0;
+    left: 0;
+}
+
+.circle-progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Asegura que el texto esté debajo de la imagen */
+    font-size: 1.2em; /* Ajusta el tamaño del texto según sea necesario */
+    color: #fff; /* Ajusta el color del texto según sea necesario */
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; 
+    justify-content: center; /* Centra los elementos horizontalmente */
+    background-color: rgba(249, 249, 249, 0.01);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    width: 100%;
+    max-width: 800px; /* Ajusta según el ancho deseado */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centra el texto dentro de los elementos */
+    margin-bottom: 20px;
+}
+
 .skill-item {
-    margin: 20px 0;
-    text-align: center;
+    position: relative;
+    width: 150px; /* Ajusta el tamaño del contenedor de la skill */
+    height: 250px; /* Ajusta para dar espacio suficiente para el círculo y el texto */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los elementos horizontalmente */
+    justify-content: center; /* Centra los elementos verticalmente */
+    text-align: center; /* Centra el texto */
+    padding: 10px; /* Añade algo de espacio interno si es necesario */
 }
 
 .skill-container {
     position: relative;
     display: inline-block;
-    width: 120px;
-    height: 120px;
-    margin-bottom: 10px;
+    width: 150px; 
+    height: 150px; 
+} 
+
+.skills-title {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333; /* Ajusta el color según sea necesario */
 }
 
-.progress-circle {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background: #f3f3f3;
-}
-
-.progress-circle .skill-logo {
+.skill-logo {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 80px;
-    height: 80px;
     transform: translate(-50%, -50%);
-    border-radius: 50%;
-    z-index: 2;
+    width: 60px; /* Ajusta el tamaño de la imagen según sea necesario */
+    height: 60px;
+    object-fit: cover; /* Asegura que la imagen se ajuste bien al contenedor */
+    z-index: 1; /* Asegura que la imagen esté sobre el círculo de progreso */
 }
 
-.progress-circle .progress-bar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background: conic-gradient(#4caf50 var(--progress), #f3f3f3 var(--progress) 100%);
-    clip: rect(0, 120px, 120px, 60px);
-    transform: rotate(-90deg);
-    z-index: 1;
+.skill-item h3 {
+    margin: 5px 3; /* Ajusta el margen para reducir el espacio entre el círculo y el nombre */
+    font-size: 1em; /* Ajusta el tamaño de la fuente según sea necesario */
+}
+
+.skill-item p {
+    margin: 0; /* Elimina el margen para reducir el espacio */
+    font-size: 0.9em; /* Ajusta el tamaño de la fuente según sea necesario */
+    width: 80%; /* Ajusta el ancho según sea necesario */
+    text-align: center; /* Centra el texto dentro del párrafo */
+    overflow-wrap: break-word;
+    text-align: center;
+    justify-content: right;
+    
 }
 
 .add-button,
@@ -251,79 +309,12 @@ footer {
     background-color: rgba(0, 0, 0, 0.5);
     padding: 10px;
     text-align: center;
+    color: #fff;
 }
 
 /* *********************************************************************************************** */
 
-/* #about-me, #skills, #developments {
-    margin: 20px 0;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.8); 
-    border-radius: 8px; 
-} */
-
-h1,
-h2 {
-    color: #333;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-li {
-    margin-bottom: 10px;
-}
-
-/* ************************************************************************************************* */
-
-/* .login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; 
-    background: url("{% static '/main/img/tablet_login.png' %}") no-repeat center center fixed;
-    background-size: cover;
-}
-
-.tablet-image {
-    position: relative;
-    width: 400px; 
-    height: 600px; 
-    background: rgba(0, 0, 0, 0.6); 
-    border-radius: 20px; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} 
-
-.login-form {
-    width: 80%;
-    padding: 20px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-.login-form button {
-    width: 100%;
-    padding: 10px;
-    background-color: #1a1a1a; 
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.login-form button:hover {
-    background-color: #333;
-} */
-
-/*  *******************************************************************************************  */
-
-.edit-button {
+button {
     display: inline-block;
     margin: 5px;
     padding: 10px;

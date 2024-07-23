@@ -1,8 +1,10 @@
 {% extends "main/base.html" %}
 
+{% load static %}
+
 {% block content %}
 
-<div class="about-me">
+<div class="about-me" id="sobre-mi">
     <h2>Sobre Mí</h2>
     <p>{{ about_me.bio }}</p>
     {% if user.is_authenticated %}   
@@ -10,18 +12,20 @@
     {% endif %}
 </div>
 
-<div class="skills">
-    <h2>Skills</h2>
+<div class="skills" id="habilidades">
+    <h2>My Skills</h2>
     {% if user.is_authenticated %}
         <a href="{% url 'add_skill' %}" class="add-button">Agregar Skill</a>
     {% endif %}
     {% for skill in skills %}
     <div class="skill-item">
         <div class="skill-container">
-            <div class="progress-circle" data-progress="{{ skill.progress }}">
+            <circle-progress value="{{ skill.progress }}" max="100" text-format="percent"></circle-progress>
+            {% if skill.image %}
                 <img src="{{ skill.image.url }}" alt="{{ skill.name }}" class="skill-logo">
-                <div class="progress-bar" style="background: conic-gradient(#4caf50 {{ skill.progress }}%, #ddd 0%);"></div>
-            </div>
+            {% else %}
+                <img src="{% static 'main/img/porta_circulo.png' %}" alt="Default Image" class="skill-logo">
+            {% endif %}
         </div>
         <h3>{{ skill.name }}</h3>
         <p>{{ skill.description }}</p>
@@ -29,11 +33,12 @@
             <a href="{% url 'edit_skill' skill_id=skill.id %}" class="edit-button">Editar</a>
         {% endif %}
     </div>
-{% endfor %}
+    {% endfor %}
 </div>
 
-<div class="developments">
-    <h2>Developments</h2>
+
+<div class="developments" id="desarrollos">
+    <h2>My Developments</h2>
     {% if user.is_authenticated %}
         <a href="{% url 'add_development' %}" class="add-button">Agregar Development</a>
     {% endif %}
