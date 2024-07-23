@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: portfolio_django_2024
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn portfolio.wsgi --log-file -
+    autoDeploy: true
+    # Añade la siguiente línea para ejecutar collectstatic
+    postDeployCommand: python manage.py collectstatic --noinput
+    # Opcional: configura variables de entorno necesarias para tu proyecto
+    # envVars:
+      #-  key: DJANGO_SETTINGS_MODULE
+        # value: myproject.settings
+      #-  key: DATABASE_URL
+        # value: your_database_url
