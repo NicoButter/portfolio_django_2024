@@ -1,5 +1,5 @@
 # Entorno virtual
-venv/
+portfolio_venv/
 ENV/
 env/
 
