@@ -8,3 +8,23 @@
         <button type="submit">Agregar Development</button>
     </form>
 {% endblock %}
+
+
+
+
+
+
+
+
+
+
+{% comment %} {% extends 'main/base.html' %}
+
+{% block content %}
+    <h2>Agregar Development</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Agregar Development</button>
+    </form>
+{% endblock %} {% endcomment %}
