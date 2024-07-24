@@ -154,8 +154,8 @@ main {
 .developments {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px; /* Espaciado entre los elementos */
-    justify-content: center; /* Centra los elementos horizontalmente */
+    gap: 20px; 
+    justify-content: center;
     background-color: rgba(249, 249, 249, 0.01);
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
@@ -214,38 +214,38 @@ circle-progress {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 1; /* Asegura que el texto esté debajo de la imagen */
-    font-size: 1.2em; /* Ajusta el tamaño del texto según sea necesario */
-    color: #fff; /* Ajusta el color del texto según sea necesario */
+    z-index: 1; 
+    font-size: 1.2em; 
+    color: #fff; 
 }
 
 .skills {
     display: flex;
     flex-wrap: wrap;
     gap: 15px; 
-    justify-content: center; /* Centra los elementos horizontalmente */
+    justify-content: center; 
     background-color: rgba(249, 249, 249, 0.01);
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
     width: 100%;
-    max-width: 800px; /* Ajusta según el ancho deseado */
+    max-width: 400px; 
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center; /* Centra el texto dentro de los elementos */
+    text-align: center; 
     margin-bottom: 20px;
     float: none;
 }
 
 .skill-item {
     position: relative;
-    width: 150px; /* Ajusta el tamaño del contenedor de la skill */
-    height: 250px; /* Ajusta para dar espacio suficiente para el círculo y el texto */
+    width: 150px; 
+    height: 250px; 
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centra los elementos horizontalmente */
-    justify-content: center; /* Centra los elementos verticalmente */
-    text-align: center; /* Centra el texto */
-    padding: 10px; /* Añade algo de espacio interno si es necesario */
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
+    padding: 10px; 
 }
 
 .skill-container {
@@ -258,7 +258,7 @@ circle-progress {
 .skills-title {
     font-size: 2em;
     margin-bottom: 20px;
-    color: #333; /* Ajusta el color según sea necesario */
+    color: #333; 
 }
 
 .skill-logo {
@@ -266,22 +266,22 @@ circle-progress {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 60px; /* Ajusta el tamaño de la imagen según sea necesario */
+    width: 60px; 
     height: 60px;
-    object-fit: cover; /* Asegura que la imagen se ajuste bien al contenedor */
-    z-index: 1; /* Asegura que la imagen esté sobre el círculo de progreso */
+    object-fit: cover; 
+    z-index: 1; 
 }
 
 .skill-item h3 {
-    margin: 5px 3; /* Ajusta el margen para reducir el espacio entre el círculo y el nombre */
-    font-size: 1em; /* Ajusta el tamaño de la fuente según sea necesario */
+    margin: 5px 3; 
+    font-size: 1em; 
 }
 
 .skill-item p {
-    margin: 0; /* Elimina el margen para reducir el espacio */
-    font-size: 0.9em; /* Ajusta el tamaño de la fuente según sea necesario */
-    width: 80%; /* Ajusta el ancho según sea necesario */
-    text-align: center; /* Centra el texto dentro del párrafo */
+    margin: 0; 
+    font-size: 0.9em; 
+    width: 80%; 
+    text-align: center; 
     overflow-wrap: break-word;
     text-align: center;
     justify-content: right;
