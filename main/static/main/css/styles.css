@@ -381,3 +381,108 @@ button {
 .login-form button:hover {
     background-color: #333;
 }
+
+/*****************************************************************************************************************/
+
+/* Estilos generales para pantallas pequeñas */
+@media (max-width: 600px) {
+    header {
+        padding: 10px;
+    }
+
+    .logo img {
+        height: 70px;
+    }
+
+    .banner h1 {
+        font-size: 1.5em;
+    }
+
+    .banner img {
+        max-height: 120px;
+    }
+
+    .social-links {
+        margin-right: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    main {
+        padding: 10px;
+        max-width: 100%;
+    }
+
+    .about-me,
+    .developments,
+    .skills {
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    .skill-item {
+        width: 120px; /* Ajusta según sea necesario */
+        height: auto; /* Deja que el alto se ajuste automáticamente */
+    }
+
+    .skill-logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .skills-title {
+        font-size: 1.5em;
+    }
+
+    .login-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tablet-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .login-form {
+        width: 90%;
+        padding: 15px;
+    }
+}
+
+/* Estilos adicionales para pantallas aún más pequeñas, como teléfonos en modo retrato */
+
+@media (max-width: 400px) {
+    .banner h1 {
+        font-size: 1.2em;
+    }
+
+    .banner img {
+        max-height: 100px;
+    }
+
+    .skill-item {
+        width: 100px; /* Ajusta según sea necesario */
+    }
+
+    .skill-logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .skills-title {
+        font-size: 1.2em;
+    }
+
+    .login-form {
+        width: 95%;
+        padding: 10px;
+    }
+}
+
