@@ -14,9 +14,8 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'main/css/styles.css' %}">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
     {% block extra_head %}
         <link rel="stylesheet" href="{% static 'main/css/styles.css' %}">
     {% endblock %}
@@ -47,7 +46,7 @@
 
         <nav>
             <ul>
-                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="{% url 'home' %}">Inicio</li>
                 <li><a href="#sobre-mi">Sobre Mí</a></li>
                 <li><a href="#habilidades">Habilidades</a></li>
                 <li><a href="#desarrollos">Desarrollos</a></li>

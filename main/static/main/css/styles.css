@@ -4,8 +4,9 @@ body {
     padding: 0;
     overflow-x: hidden;
     height: 100%;
-    font-family: "Major Mono Display", monospace;
-    font-weight: 400;
+    font-family: "Source Code Pro", monospace;
+    font-optical-sizing: auto;
+    font-weight: 500;
     font-style: normal;
 }
 
@@ -124,12 +125,13 @@ nav ul li a:hover {
 
 main {
     padding: 20px;
+    max-width: 500px;
 }
 
 /********************************************************************************************************************/
 
 .about-me {
-    width: 35%;
+    width: 100%;
     margin-right: auto;
     margin-bottom: 20px;
     padding: 20px;
@@ -160,7 +162,7 @@ main {
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
     width: 100%;
-    max-width: 400px;
+    /* max-width: 400px; */
     margin-bottom: 20px;
     padding: 20px;
     border-radius: 8px;
@@ -228,7 +230,7 @@ circle-progress {
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
     width: 100%;
-    max-width: 400px; 
+    /* max-width: 400px;  */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center; 

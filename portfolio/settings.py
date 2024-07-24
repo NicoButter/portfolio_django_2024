@@ -85,6 +85,15 @@ DATABASES = {
         'HOST': 'dpg-cqg2ksqju9rs73c713t0-a', # 'localhost',
         'PORT': '5432',
     }
+
+    #  'default': {
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'NAME': 'portfolio_db',
+    #     'USER': 'portfolio',
+    #     'PASSWORD': 'portfolio010203',
+    #     'HOST': 'localhost',
+    #     'PORT': '5432',
+    # }
 }
 
 
