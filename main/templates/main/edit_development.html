@@ -6,24 +6,8 @@
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Save</button>
+        <button type="submit" name="action" value="delete">Eliminar</button>
     </form>
+    <button type="button" onclick="window.history.back();">Volver</button>
 {% endblock %}
 
-
-
-
-
-
-
-
-
-{% comment %} {% extends "main/base.html" %}
-
-{% block content %}
-    <h2>Edit Development</h2>
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Save</button>
-    </form>
-{% endblock %} {% endcomment %}

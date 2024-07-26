@@ -9,19 +9,3 @@
     </form>
 {% endblock %}
 
-
-
-
-
-
-
-{% comment %} {% extends 'main/base.html' %}
-
-{% block content %}
-    <h2>Agregar Skill</h2>
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Agregar Skill</button>
-    </form>
-{% endblock %} {% endcomment %}

@@ -8,24 +8,6 @@
         <button type="submit">Guardar</button>
         <button type="submit" name="action" value="delete">Eliminar</button>
     </form>
+    <button type="button" onclick="window.history.back();">Volver</button>
 {% endblock %}
 
-
-
-
-
-
-
-
-
-{% comment %} {% extends "main/base.html" %}
-
-{% block content %}
-    <h1>Editar Skill</h1>
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Guardar</button>
-        <button type="submit" name="action" value="delete">Eliminar</button>
-    </form>
-{% endblock %} {% endcomment %}
