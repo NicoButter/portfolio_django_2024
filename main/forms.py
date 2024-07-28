@@ -26,11 +26,6 @@ class SkillForm(forms.ModelForm):
             instance.save()
         return instance
 
-# class DevelopmentForm(forms.ModelForm):
-#     class Meta:
-#         model = Development
-#         fields = ['title', 'description', 'image']
-        
 class DevelopmentForm(forms.ModelForm):
     image_file = forms.ImageField(required=False)
 
@@ -45,3 +40,5 @@ class DevelopmentForm(forms.ModelForm):
         if commit:
             instance.save()
         return instance
+    
+

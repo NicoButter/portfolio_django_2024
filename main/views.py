@@ -106,3 +106,6 @@ def add_development(request):
         form = DevelopmentForm()
     return render(request, 'main/add_development.html', {'form': form})
 
+def contacto(request):
+    return render(request, 'main/contacto.html')
+

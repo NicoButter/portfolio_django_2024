@@ -45,36 +45,6 @@
     </div>
 </div>
 
-
-
-
-{% comment %} <div class="skills" id="habilidades">
-    <div class="skills-title">
-        <h2>My Skills</h2>
-    </div>
-
-    {% if user.is_authenticated %}
-        <a href="{% url 'add_skill' %}" class="add-button">Agregar Skill</a>
-    {% endif %}
-    {% for skill in skills %}
-    <div class="skill-item">
-        <div class="skill-container">
-            <circle-progress value="{{ skill.progress }}" max="100" text-format="percent"></circle-progress>
-            {% if skill.image %}
-                <img src="{{ skill.image|image_data }}" alt="{{ skill.name }}" class="skill-logo">
-            {% else %}
-                <img src="{% static 'main/img/porta_circulo.png' %}" alt="Default Image" class="skill-logo">
-            {% endif %}
-        </div>
-        <h3>{{ skill.name }}</h3>
-        <p>{{ skill.description }}</p>
-        {% if user.is_authenticated %}
-            <a href="{% url 'edit_skill' skill_id=skill.id %}" class="edit-button">Editar</a>
-        {% endif %}
-    </div>
-    {% endfor %}
-</div> {% endcomment %}
-
 <div class="developments" id="desarrollos">
     <h2>My Developments</h2>
     {% if user.is_authenticated %}
