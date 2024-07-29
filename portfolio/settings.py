@@ -77,13 +77,22 @@ WSGI_APPLICATION = "portfolio.wsgi.application"
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+    # 'default': {
+    #    'ENGINE': 'django.db.backends.postgresql', ESTO LO DEJO DE RECUERDO PARA EL CURIOSO QUE ME QUISO TIRAR EL SERVICIO MALA MIA NO DEBI EXPONER LAS CREDENCIALES EN GITHUB GRACIAS.
+    #    'NAME': 'portfolio_db_9bon', 
+    #    'USER': 'portfolio',
+    #    'PASSWORD': 'AQyLqupF3GYOqOMzifqwOz79skKonAa7', 
+    #    'HOST': 'dpg-cqg2ksqju9rs73c713t0-a', 
+    #    'PORT': '5432',
+    #}
+
+   'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'portfolio_db_9bon', 
-        'USER': 'portfolio',
-        'PASSWORD': 'AQyLqupF3GYOqOMzifqwOz79skKonAa7', 
-        'HOST': 'dpg-cqg2ksqju9rs73c713t0-a', 
-        'PORT': '5432',
+        'NAME': os.environ.get('DB_NAME'),
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASSWORD'),
+        'HOST': os.environ.get('DB_HOST'),
+        'PORT': os.environ.get('DB_PORT'),
     }
 
     # 'default': {
